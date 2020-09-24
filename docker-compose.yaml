@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonar
+    ports:
+      - "127.0.0.1:9000:9000"
+    networks:
+      - sonarnet
+    env_file:
+      - sonar.env
+    depends_on:
+      - db
+    volumes:
+      - ./sonarqube_conf:/opt/sonarqube/conf
+      - ./sonarqube_data:/opt/sonarqube/data
+      - ./sonarqube_extensions:/opt/sonarqube/extensions
+      - ./sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+
+  db:
+    image: postgres
+    container_name: db
+    ports:
+        - "127.0.0.1:5432:5432"
+    networks:
+      - sonarnet
+    env_file:
+      - postgres.env
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql/data
+
+networks:
+  sonarnet:
+
+volumes:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_bundled-plugins:
+  postgresql_data:
