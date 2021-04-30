@@ -12,6 +12,6 @@ Para ello analizaremos scripts sueltos de Python a ver qué podemos mejorar/puli
 
 - Configuraciones de Sonar y Postgresql:
     - [Configuración de Sonar](docs/sonar.md)
-    - [Configuración de Postgres](docs/posgtres.md)
+    - [Configuración de Postgres](docs/postgres.md)
 
 Nota: Para solucionar el problema de Elastic de memoria en Linux: [Enlace](https://stackoverflow.com/questions/51445846/elasticsearch-max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-inc)
