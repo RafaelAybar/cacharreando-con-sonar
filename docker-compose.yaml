@@ -7,8 +7,6 @@ services:
       - "127.0.0.1:9000:9000"
     networks:
       - sonarnet
-    env_file:
-      - sonar.env
     depends_on:
       - db
     volumes:
@@ -31,10 +29,3 @@ services:
 
 networks:
   sonarnet:
-
-volumes:
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_bundled-plugins:
-  postgresql_data:
